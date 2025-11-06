@@ -1,8 +1,10 @@
 import React from 'react'
+import { Inter, Manrope, Outfit, IBM_Plex_Sans, Urbanist } from "next/font/google";
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function page() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300'>
+    <div className={`${inter.variable} min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300 font-sans`}>
       <div className='flex flex-col justify-center items-center'> {/*Hero Section*/}
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full
                 bg-white/10 backdrop-blur-md border border-white/30
