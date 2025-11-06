@@ -2,10 +2,10 @@ import React from 'react'
 import { Cloud, CloudRain, Sun, ArrowDown } from "lucide-react";
 import { Inter, Manrope, Outfit, IBM_Plex_Sans, Urbanist } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
+import WeatherPage from './components/weatherPage';
 export default function page() {
   return (
-    <div className={`${inter.variable} min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300 font-sans`}>
+    <div className={`${inter.variable} min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300 font-sans mb`}>
       {/*Hero Section*/}
       <div className='flex flex-col justify-center items-center'> 
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full
@@ -32,6 +32,9 @@ export default function page() {
         </div>
       </div>
       {/*Weather Data Section*/}
+      <div className='pb-20'>
+        <WeatherPage />
+      </div>
     </div>
   )
 }
