@@ -12,12 +12,16 @@ export default function page() {
           <span className="block h-3 w-3 rounded-full bg-blue-400"></span>
           <span className="text-base text-gray-800">Live Weather Updates</span>
         </div>
-        <h1 className="text-6xl font-bold tracking-tight flex flex-col items-center justify-center">
-          <div className='text-gray-800 text-8xl'>Aethera</div>
+        <h1 className=" font-bold tracking-tight flex flex-col items-center justify-center">
+          <div className='text-cyan-200 drop-shadow-lg text-9xl'>Aethera</div>
           <div>
-            <span className="bg-gradient-to-r from-cyan-500 via-green-400 to-yellow-400 bg-clip-text text-transparent opacity-80">Weather Intelligence</span>
+            <span className="bg-gradient-to-r text-8xl drop-shadow-lg from-cyan-500 via-green-400 to-yellow-400 bg-clip-text text-transparent opacity-80">Weather Intelligence</span>
           </div>
         </h1>
+        <div className='text-gray-600 text-2xl w-140 flex justify-center items-center flex-col '>
+          <p>Real-time weather insights powered by advanced</p>
+          <p>AI Integration</p> 
+        </div>
       </div>
     </div>
   )
