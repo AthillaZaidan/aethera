@@ -6,7 +6,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export default function page() {
   return (
     <div className={`${inter.variable} min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300 font-sans`}>
-      <div className='flex flex-col justify-center items-center'> {/*Hero Section*/}
+      {/*Hero Section*/}
+      <div className='flex flex-col justify-center items-center'> 
         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full
                 bg-white/10 backdrop-blur-md border border-white/30
                 shadow-none m-3 mt-15">
@@ -23,13 +24,14 @@ export default function page() {
           <Cloud className="w-60 h-60 text-white animate-cloud" />
         </div>
          <div className="absolute z-0 top-20 right-40 opacity-40 pointer-events-none">
-          <Cloud className="w-60 h-60 text-white animate-cloud" />
+          <Sun className="w-60 h-60 text-white animate-cloud" />
         </div>
         <div className='text-gray-600 text-2xl w-140 flex justify-center items-center flex-col '>
           <p>Real-time weather insights powered by advanced</p>
           <p>AI Integration</p> 
         </div>
       </div>
+      {/*Weather Data Section*/}
     </div>
   )
 }
