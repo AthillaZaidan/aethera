@@ -1,4 +1,5 @@
 import React from 'react'
+import { Cloud, CloudRain, Sun, ArrowDown } from "lucide-react";
 import { Inter, Manrope, Outfit, IBM_Plex_Sans, Urbanist } from "next/font/google";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -18,6 +19,12 @@ export default function page() {
             <span className="bg-gradient-to-r text-8xl drop-shadow-lg from-cyan-500 via-green-400 to-yellow-400 bg-clip-text text-transparent opacity-80">Weather Intelligence</span>
           </div>
         </h1>
+        <div className="absolute z-0 top-40 left-20 opacity-40 pointer-events-none">
+          <Cloud className="w-60 h-60 text-white animate-cloud" />
+        </div>
+         <div className="absolute z-0 top-20 right-40 opacity-40 pointer-events-none">
+          <Cloud className="w-60 h-60 text-white animate-cloud" />
+        </div>
         <div className='text-gray-600 text-2xl w-140 flex justify-center items-center flex-col '>
           <p>Real-time weather insights powered by advanced</p>
           <p>AI Integration</p> 
