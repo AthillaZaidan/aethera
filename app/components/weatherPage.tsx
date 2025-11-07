@@ -37,10 +37,10 @@ export default function WeatherPage() {
     <div className="flex flex-col items-center pt-4 w-full">
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-0 mb-8 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 shadow-md px-2 py-1 max-w-sm mx-auto w-full transition focus-within:ring-2 focus-within:ring-cyan-300"
+        className="flex items-center flex-col justify-around sm:flex-row gap-0 mb-8 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 shadow-md px-2 py-1 max-w-sm mx-auto w-full transition focus-within:ring-2 focus-within:ring-cyan-300"
       >
         <input
-          className="flex-1 px-6 py-3 rounded-full bg-transparent text-base sm:text-lg text-blue-900 placeholder:text-blue-400 outline-none border-none focus:ring-0"
+          className=" flex-1 px-6 py-3 rounded-full bg-transparent text-base sm:text-lg text-blue-900 placeholder:text-blue-400 outline-none border-none focus:ring-0"
           type="text"
           value={city}
           onChange={e => setCity(e.target.value)}
@@ -48,7 +48,7 @@ export default function WeatherPage() {
         />
         <button
           type="submit"
-          className="ml-2 px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-400 text-white font-bold shadow-lg hover:from-cyan-600 hover:to-blue-500 transition duration-200"
+          className="ml-2 px-8 py-3 rounded-full bg-gradient-to-r w-[80%] from-cyan-500 to-blue-400 text-white font-bold shadow-lg hover:from-cyan-600 hover:to-blue-500 transition duration-200"
         >
           Search
         </button>
