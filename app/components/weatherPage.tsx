@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import WeatherCard from "@/app/components/weathercard"; // Import your component
+import WeatherCard from "./weathercard";
 
 export default function WeatherPage() {
   const [city, setCity] = useState("Bandung");
@@ -24,26 +24,23 @@ export default function WeatherPage() {
     }
   };
 
-  // Fetch when city changes (optional: only on search)
   React.useEffect(() => {
     fetchWeather(city);
   }, []);
 
-  // Handle form submit
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (city.trim()) fetchWeather(city);
   };
 
   return (
-    <div className="flex flex-col items-center pt-20">
-      {/* City search form */}
+    <div className="flex flex-col items-center pt-4 w-full">
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-0 mb-8 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 shadow-md px-2 py-1 transition focus-within:ring-2 focus-within:ring-cyan-300 max-w-sm mx-auto"
+        className="flex items-center gap-0 mb-8 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 shadow-md px-2 py-1 max-w-sm mx-auto w-full transition focus-within:ring-2 focus-within:ring-cyan-300"
       >
         <input
-          className="flex-1 px-6 py-3 rounded-full bg-transparent text-lg text-blue-900 placeholder:text-blue-400 outline-none border-none focus:ring-0"
+          className="flex-1 px-6 py-3 rounded-full bg-transparent text-base sm:text-lg text-blue-900 placeholder:text-blue-400 outline-none border-none focus:ring-0"
           type="text"
           value={city}
           onChange={e => setCity(e.target.value)}
@@ -56,26 +53,23 @@ export default function WeatherPage() {
           Search
         </button>
       </form>
-
       {/* Weather display */}
-      {loading && <div className="text-blue-600">Loading...</div>}
-      {error && (
-        <div className="text-red-600 mb-4">
-          {error}
-        </div>
-      )}
-      {weather && weather.main && (
-        <WeatherCard
-          temp={Math.round(weather.main.temp)}
-          condition={weather.weather?.[0]?.main}
-          location={weather.name + ", " + (weather.sys?.country ?? "")}
-          humidity={weather.main.humidity}
-          windSpeed={weather.wind.speed}
-          visibility={(weather.visibility ?? 0) / 1000}
-          pressure={weather.main.pressure}
-          feelsLike={Math.round(weather.main.feels_like)}
-        />
-      )}
+      <div className="w-full flex flex-col items-center">
+        {loading && <div className="text-blue-600 mb-2">Loading...</div>}
+        {error && <div className="text-red-600 mb-2">{error}</div>}
+        {weather && weather.main && (
+          <WeatherCard
+            temp={Math.round(weather.main.temp)}
+            condition={weather.weather?.[0]?.main}
+            location={weather.name + ", " + (weather.sys?.country ?? "")}
+            humidity={weather.main.humidity}
+            windSpeed={weather.wind.speed}
+            visibility={weather.visibility / 1000}
+            pressure={weather.main.pressure}
+            feelsLike={Math.round(weather.main.feels_like)}
+          />
+        )}
+      </div>
     </div>
   );
 }
