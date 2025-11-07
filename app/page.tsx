@@ -9,11 +9,11 @@ export default function Page() {
   return (
     <div className={`${inter.variable} min-h-screen bg-gradient-to-br from-blue-900 via-blue-500 to-blue-300 font-sans overflow-x-hidden`}>
       <div className="relative w-full">
-        <div className="hidden sm:block absolute z-0 top-20 left-4 md:left-20 opacity-30 pointer-events-none">
-          <Cloud className="w-20 h-20 md:w-44 md:h-44 text-white animate-cloud" />
+        <div className="absolute z-0 top-10 left-2 md:top-20 md:left-20 opacity-30 pointer-events-none">
+          <Cloud className="w-12 h-12 sm:w-20 sm:h-20 md:w-44 md:h-44 text-white animate-cloud" />
         </div>
-        <div className="hidden sm:block absolute z-0 top-12 right-4 md:right-40 opacity-30 pointer-events-none">
-          <Sun className="w-20 h-20 md:w-44 md:h-44 text-white animate-cloud" />
+        <div className="absolute z-0 top-6 right-2 md:top-12 md:right-40 opacity-30 pointer-events-none">
+          <Sun className="w-12 h-12 sm:w-20 sm:h-20 md:w-44 md:h-44 text-white animate-cloud" />
         </div>
       </div>
       {/* Hero Section */}
