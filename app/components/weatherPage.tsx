@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import WeatherCard from "@/app/components/weathercard"; // Import your component
 
 export default function WeatherPage() {
-  const [city, setCity] = useState("San Francisco");
+  const [city, setCity] = useState("Bandung");
   const [weather, setWeather] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
